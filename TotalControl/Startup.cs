@@ -25,14 +25,15 @@ namespace TotalControl
             //Creating first Admin Role and creating a default Admin User
             if (!roleManager.RoleExists("Admin"))
             {
+
                 //create Admin role
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
 
                 //Admin who will maintain the website
                 var user = new ApplicationUser();
-                //user.UserName = "Jane";  //not using username, email address is the username
+                user.UserName = "totalcontrol2019@gmail.com";
                 user.Email = "totalcontrol2019@gmail.com";
 
                 string userPWD = "Tot@l100";

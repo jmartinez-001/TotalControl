@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TotalControl.Models;
 
+
 namespace TotalControl.Controllers
 {
     [Authorize]

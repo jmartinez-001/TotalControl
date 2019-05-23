@@ -18,8 +18,23 @@ namespace TotalControl
     {
         public Task SendAsync(IdentityMessage message)
         {
+            var smtp = new System.Net.Mail.SmtpClient();
+            var mail = new System.Net.Mail.MailMessage();
+
+            mail.IsBodyHtml = true;
+            mail.From = new System.Net.Mail.MailAddress("totalcontrol2019@gmail.com", "System Admin");
+            mail.To.Add(message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+
+            smtp.Timeout = 1000;
+
+            var t = Task.Run(() => smtp.SendAsync(mail, null));
+
+            return t;
+
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            //return Task.FromResult(0);
         }
     }
 

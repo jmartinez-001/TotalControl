@@ -27,7 +27,7 @@ namespace TotalControl.Controllers
         // GET: Admin/Create
         public ActionResult AddEmployee()
         {
-            return View();
+            return RedirectToAction("Register","Account");
         }
 
         // POST: Admin/Create

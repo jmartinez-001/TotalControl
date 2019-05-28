@@ -16,7 +16,5 @@ namespace TotalControl.Models
         public string Type { get; set; }
 
 
-
-
     }
 }

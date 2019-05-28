@@ -82,6 +82,25 @@ namespace TotalControl.Models
         public string UserRoles { get; internal set; }
     }
 
+    public class AddEmployeeViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Employee Role")]
+        public string UserRole { get; set; }
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]

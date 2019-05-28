@@ -1,27 +1,51 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Home</h2>
+<h5>Welcome!</h5>
+<div class="alert-light" style="padding-bottom:4px;">
+    Date : @DateTime.Now
+</div>
+<hr />
 
+<div class="row" style="padding:25px 7px 4px 4px ">
 
-<ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-</ul>
-<div class="btn-group-lg">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Add Employee" class="btn btn-default" />
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Reports</h5>
+                <p class="card-text">View current, site business-intelligence reports for system health</p>
+                <a href=@Url.Action("Reports", "Admin") class="btn btn-primary">Go</a>
+            </div>
+        </div>
     </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Architecture</h5>
+                <p class="card-text">View and make changes to current system architecture's structure.</p>
+                <a href=@Url.Action("SystemDesign", "Admin") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Employees</h5>
+                <p class="card-text">Add or remove employees to business roles within system architecture.</p>
+                <a href=@Url.Action("AddEmployee", "Admin") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Documents</h5>
+                <p class="card-text">View, add, or make changes to current forms.</p>
+                <a href=@Url.Action("Form", "Admin") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+
 </div>

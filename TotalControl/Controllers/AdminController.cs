@@ -24,10 +24,22 @@ namespace TotalControl.Controllers
             return View();
         }
 
+        // GET: Admin
+        public ActionResult Reports()
+        {
+            return View();
+        }
+
+        // GET: Admin
+        public ActionResult Forms()
+        {
+            return View();
+        }
+
         // GET: Admin/Create
         public ActionResult AddEmployee()
         {
-            return RedirectToAction("Register","Account");
+            return View();
         }
 
         // POST: Admin/Create
@@ -46,15 +58,27 @@ namespace TotalControl.Controllers
             }
         }
 
+        // GET: Admin/SystemDesign
+        public ActionResult SystemDesign()
+        {
+            return View();
+        }
+
+        // GET: Admin/Architecture
+        public ActionResult Architecture()
+        {
+            return View();
+        }
+
         // GET: Admin/Create
-        public ActionResult Create()
+        public ActionResult CreateSection()
         {
             return View();
         }
 
         // POST: Admin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CreateSection(FormCollection collection)
         {
             try
             {
@@ -90,26 +114,26 @@ namespace TotalControl.Controllers
             }
         }
 
-        // GET: Admin/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: Admin/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: Admin/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        //// POST: Admin/Delete/5
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

@@ -1,0 +1,69 @@
+﻿@*@model TotalControl.Models.Section*@
+@{
+    ViewBag.Title = "System Design";
+}
+
+<h2>System Architecture</h2>
+<div class="alert-light" style="padding-bottom:4px;">
+    Date : @DateTime.Now
+</div>
+<hr />
+
+<div class="row" style="padding:25px 7px 4px 4px ">
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Architecture Structure</h5>
+                <p class="card-text">View the current system architecture's structure and make changes to the design.</p>
+                <a href="@Url.Action("Architecture", "Admin")" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Change Current State</h5>
+                <p class="card-text">Make modifications to the current state of the system architecture's structure.</p>
+                <a href="@Url.Action("EditArchitecture", "Admin")" class="btn btn-primary">Change</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Create New Section</h5>
+                <p class="card-text">Create a new section within the current state of the system architecture's structure.</p>
+                <a href="@Url.Action("CreateSection", "Admin")" class="btn btn-primary">Create</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*@using (Html.BeginForm())
+{
+
+    <h4>Create or modify existing architecture</h4>
+    <hr />
+    @Html.AntiForgeryToken() 
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    
+}*@
+
+<div style="position:absolute; bottom:80px">
+    @Html.ActionLink("Back to Home", "Index")
+</div>

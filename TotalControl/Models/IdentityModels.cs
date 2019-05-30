@@ -20,6 +20,14 @@ namespace TotalControl.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Field> Fields { get; set; }
+        public DbSet<Form> Forms { get; set; }
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

@@ -168,19 +168,32 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ArchitectureController.cs" />
     <Compile Include="Controllers\AssociateController.cs" />
     <Compile Include="Controllers\CoordinatorController.cs" />
+    <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WeatherAPI.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905222040384_init.cs" />
-    <Compile Include="Migrations\201905222040384_init.Designer.cs">
-      <DependentUpon>201905222040384_init.cs</DependentUpon>
+    <Compile Include="Migrations\201905291424213_newdatabase.cs" />
+    <Compile Include="Migrations\201905291424213_newdatabase.Designer.cs">
+      <DependentUpon>201905291424213_newdatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905291641467_added type prop to section.cs" />
+    <Compile Include="Migrations\201905291641467_added type prop to section.Designer.cs">
+      <DependentUpon>201905291641467_added type prop to section.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905292022576_updated section model.cs" />
+    <Compile Include="Migrations\201905292022576_updated section model.Designer.cs">
+      <DependentUpon>201905292022576_updated section model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -250,6 +263,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
     <Content Include="JavaScript_Webcam_Plugin\jquery.webcam.js" />
     <Content Include="JavaScript_Webcam_Plugin\jquery.webcam.min.js" />
     <Content Include="JavaScript_Webcam_Plugin\jscam.swf" />
@@ -350,7 +364,7 @@
     <Content Include="Views\Associate\Index.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Coordinator\Index.cshtml" />
-    <Content Include="Views\Admin\AddEmployee.cshtml" />
+    <Content Include="Views\Admin\SendRegistrationEmail.cshtml" />
     <Content Include="Views\Admin\SystemDesign.cshtml" />
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -365,23 +379,49 @@
     <Content Include="Views\Admin\CreateSection.cshtml" />
     <Content Include="Views\Admin\Reports.cshtml" />
     <Content Include="Views\Admin\Forms.cshtml" />
+    <Content Include="Views\Architecture\Index.cshtml" />
+    <Content Include="Views\Sections\Create.cshtml" />
+    <Content Include="Views\Sections\Delete.cshtml" />
+    <Content Include="Views\Sections\Details.cshtml" />
+    <Content Include="Views\Sections\Edit.cshtml" />
+    <Content Include="Views\Sections\Index.cshtml" />
+    <Content Include="Views\Forms\Create.cshtml" />
+    <Content Include="Views\Forms\Delete.cshtml" />
+    <Content Include="Views\Forms\Details.cshtml" />
+    <Content Include="Views\Forms\Edit.cshtml" />
+    <Content Include="Views\Forms\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\_ViewStart.cshtml" />
+    <Content Include="App_Code\NestedData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\WeatherAPI\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905222040384_init.resx">
-      <DependentUpon>201905222040384_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905291424213_newdatabase.resx">
+      <DependentUpon>201905291424213_newdatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291641467_added type prop to section.resx">
+      <DependentUpon>201905291641467_added type prop to section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905292022576_updated section model.resx">
+      <DependentUpon>201905292022576_updated section model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

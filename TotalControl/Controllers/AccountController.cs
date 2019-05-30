@@ -162,7 +162,7 @@ namespace TotalControl.Controllers
                     // Send an email with this link
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    await UserManager.SendEmailAsync(user.Id, "Access New Total Control Account", "Your default password is 'Associ@te1' Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     if (model.UserRoles == "Coordinator")
                     {
@@ -175,6 +175,10 @@ namespace TotalControl.Controllers
                     if (model.UserRoles == "Associate")
                     {
                         return RedirectToAction("Create", "Associate");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 AddErrors(result);

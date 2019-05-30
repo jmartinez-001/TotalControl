@@ -7,13 +7,13 @@ namespace TotalControl.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class addedtypeproptosection : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedtypeproptosection));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905222040384_init"; }
+            get { return "201905291641467_added type prop to section"; }
         }
         
         string IMigrationMetadata.Source

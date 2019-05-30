@@ -23,75 +23,30 @@ namespace TotalControl.Controllers
         {
             return View();
         }
-
-        // GET: Admin
-        public ActionResult Reports()
-        {
-            return View();
-        }
-
-        // GET: Admin
-        public ActionResult Forms()
-        {
-            return View();
-        }
+            
 
         // GET: Admin/Create
-        public ActionResult AddEmployee()
+        public ActionResult SendRegistrationEmail()
         {
-            return View();
+            return RedirectToAction("Register", "Account");
         }
 
-        // POST: Admin/Create
-        [HttpPost]
-        public ActionResult AddEmployee(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        //// POST: Admin/Create
+        //[HttpPost]
+        //public ActionResult SendRegistrationEmail(AddEmployeeViewModel model)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Admin/SystemDesign
-        public ActionResult SystemDesign()
-        {
-            return View();
-        }
-
-        // GET: Admin/Architecture
-        public ActionResult Architecture()
-        {
-            return View();
-        }
-
-        // GET: Admin/Create
-        public ActionResult CreateSection()
-        {
-            return View();
-        }
-
-        // POST: Admin/Create
-        [HttpPost]
-        public ActionResult CreateSection(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}                  
+              
         // GET: Admin/Edit/5
         public ActionResult Edit(int id)
         {

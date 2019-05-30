@@ -13,15 +13,20 @@ namespace TotalControl.Models
         public int Id { get; set; }
 
         [ForeignKey("Parent")]
+        [Display(Name = "Parent Section")]
         public int? ParentId { get; set; }
 
         public virtual Section Parent { get; set; }
 
+        public string Type { get; set; }
+
+        [Display(Name = "Section Name")]
         public string Name { get; set; }
 
-        public virtual List<Section> Children { get; set; }
+        public virtual ICollection<Section> Children { get; set; }
 
         [ForeignKey("Team")]
+        [Display(Name = "Team")]
         public int TeamId { get; set; }
 
         public virtual Team Team { get; set; }

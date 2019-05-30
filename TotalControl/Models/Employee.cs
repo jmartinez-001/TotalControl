@@ -18,8 +18,6 @@ namespace TotalControl.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        public string Role { get; set; }
-
         [ForeignKey("Manager")]
         public int? ManagerId { get; set; }
 
@@ -28,6 +26,6 @@ namespace TotalControl.Models
         [ForeignKey("User")]
         public string UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

@@ -11,6 +11,8 @@ namespace TotalControl.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Team Name")]
         public string Name { get; set; }
+
     }
 }

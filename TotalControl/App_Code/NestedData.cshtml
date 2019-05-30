@@ -1,0 +1,85 @@
+﻿@helper GetHtml(IList<TotalControl.Models.Section> sectionlist, int ParentId) { 
+    <table class=" table table-bordered">
+        @{ 
+            int currentId = 0;
+            int rowIndex = 0;
+            for (var i = 0; i < sectionlist.Count; i++)
+            {
+                if (sectionlist[i].Id == currentId)
+                {
+                    continue;
+                }
+                else
+                {
+                    if (rowIndex == 0)
+                    {
+                        <thead>
+                            <tr>
+                                <th>
+                                    Team Name
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Parent Section
+                                </th>
+                                <th>
+                                    Section Name
+                                </th>
+                            </tr>
+                        </thead>
+                    }
+                    rowIndex++;
+                    currentId = sectionlist[i].Id;
+                    IList<TotalControl.Models.Section> Sub;
+                    for (var j = 0; j < sectionlist.Count; j++)
+                    {
+                        if (sectionlist[j].ParentId == sectionlist[i].Id)
+                        {
+                            Sub = sectionlist[j];
+                        }
+
+                    }
+                    sectionlist.Where(a => a.ParentId.Equals(i.Id)).ToList();
+                    var newSectionList = sectionlist.Where(a => !a.Id.Equals(i.Id)).ToList();
+                    <tbody>
+                        <tr>
+                            <td>
+                                @if (Sub.Count > 0)
+                                {
+                                    <span class="icon icon-e" style="float:left; cursor:pointer;"></span>
+                                }
+                                else
+                                {
+                                    <span style="display:inline-block;width:14px">&nbsp;</span>
+                                }
+                                @sectionlist[i].Id
+                            </td>
+                            <td>@sectionlist[i].Team.Name</td>
+                            <td>@sectionlist[i].Type</td>
+                            <td>@sectionlist[i].Parent.Name</td>
+                            <td>@sectionlist[i].Name</td>
+                        </tr>
+                        <tr style="display:none;">
+                            @if (Sub.Count > 0)
+                            {
+                                <td colspan="4" class="innerTable">
+                                    @NestedData.GetHtml(newSectionList, sectionlist[i].Id)
+                                </td>
+                            }
+                            else
+                            {
+                                <td colspan="4">
+
+                                </td>
+                            }
+                        </tr>
+                    </tbody>
+                    }
+                }
+
+            }
+            
+    </table>
+}

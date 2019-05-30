@@ -1,0 +1,91 @@
+﻿@model TotalControl.Models.Section
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Section</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group" id="Type">
+        @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                <select class="form-control" id="Type" name="Type">
+                    <option value=""></option>
+                    <option value="Value Stream">Value Stream</option>
+                    <option value="Department">Department</option>
+                    <option value="Area">Area</option>
+                </select>
+            }
+        </div>
+    </div>
+
+    <div class="form-group" id="Team">
+        @Html.LabelFor(model => model.TeamId, "Team", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("TeamId", null, htmlAttributes: new { @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.TeamId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group" id="ParentSection">
+        @Html.LabelFor(model => model.ParentId, "Parent Section", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ParentId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Architecture")
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#Team').change(function () {
+            $(this).prop('disabled', true);
+            //if ($('#Type').val() != "Value Stream")
+            //    $(this).prop('disabled', false);
+        
+            
+        
+        
+        })
+    })
+
+
+    
+    
+</script>

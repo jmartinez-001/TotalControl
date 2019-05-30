@@ -34,7 +34,7 @@ namespace TotalControl.Controllers
         // POST: Manager/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone,")] Manager manager)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone")] Manager manager)
         {
             try
             {

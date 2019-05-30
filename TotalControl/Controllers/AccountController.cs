@@ -156,30 +156,31 @@ namespace TotalControl.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Access New Total Control Account", "Your default password is 'Associ@te1' Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
+                    //await UserManager.SendEmailAsync(user.Id, "Access New Total Control Account", "Your default password is 'Associ@te1' Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    if (model.UserRoles == "Coordinator")
-                    {
-                        return RedirectToAction("Create", "Coordinator");
-                    }
-                    if (model.UserRoles == "Client")
-                    {
-                        return RedirectToAction("Create", "Manager");
-                    }
-                    if (model.UserRoles == "Associate")
-                    {
-                        return RedirectToAction("Create", "Associate");
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    //if (model.UserRole == "Coordinator")
+                    //{
+                    //    return RedirectToAction("Index", "Coordinator");
+                    //}
+                    //if (model.UserRole == "Manager")
+                    //{
+                    //    return RedirectToAction("Index", "Manager");
+                    //}
+                    //if (model.UserRole == "Associate")
+                    //{
+                    //    return RedirectToAction("Index", "Associate");
+                    //}
+                    //else
+                    //{
+                        return RedirectToAction("Index", "Admin");
+                    //}
                 }
                 AddErrors(result);
             }

@@ -34,7 +34,7 @@ namespace TotalControl.Controllers
         // POST: Associate/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone,")] Associate associate)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone")] Associate associate)
         {
             try
             {

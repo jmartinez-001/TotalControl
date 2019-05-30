@@ -34,7 +34,7 @@ namespace TotalControl.Controllers
         // POST: Coordinator/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone,")] Coordinator coordinator)        
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone")] Coordinator coordinator)        
         {
             try
             {

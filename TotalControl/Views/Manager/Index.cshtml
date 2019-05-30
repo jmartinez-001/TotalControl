@@ -1,7 +1,52 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Home</h2>
+<h5>Welcome!</h5>
+<div class="alert-light" style="padding-bottom:4px;">
+    Date : @DateTime.Now
+</div>
+<hr />
+
+<div class="row" style="padding:25px 7px 4px 4px ">
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Reports</h5>
+                <p class="card-text">View current, site business-intelligence reports for system health</p>
+                <a href=@Url.Action("Reports", "Manager") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Architecture</h5>
+                <p class="card-text">View and make changes to current system architecture's structure.</p>
+                <a href=@Url.Action("Index", "Architecture") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Employees</h5>
+                <p class="card-text">Add or remove employees to business roles within system architecture.</p>
+                <a href=@Url.Action("Register", "Account") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Documents</h5>
+                <p class="card-text">View, add, or make changes to current forms.</p>
+                <a href=@Url.Action("Index", "Forms") class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
+
+</div>
 

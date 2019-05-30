@@ -22,7 +22,7 @@ namespace TotalControl.Models
         public DateTime DateCreated { get; set; }
 
         [Display(Name = "Date Conducted")]
-        public DateTime DateConducted { get; set; }
+        public DateTime? DateConducted { get; set; }
 
         [Display(Name = "Prepared By")]
         public string PreparedBy { get; set; }

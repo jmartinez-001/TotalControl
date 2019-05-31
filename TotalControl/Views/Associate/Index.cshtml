@@ -4,7 +4,7 @@
 }
 
 <h2>Home</h2>
-<h5>Welcome!</h5>
+<h5>Welcome @User.Identity.Name!</h5>
 <div class="alert-light" style="padding-bottom:4px;">
     Date : @DateTime.Now
 </div>
@@ -12,7 +12,7 @@
 
 <div class="row" style="padding:25px 7px 4px 4px ">
 
-    <div class="col-md-3">
+    @*<div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Reports</h5>
@@ -20,8 +20,8 @@
                 <a href=@Url.Action("Reports", "Manager") class="btn btn-primary">Go</a>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
+    </div>*@
+    @*<div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Architecture</h5>
@@ -29,17 +29,17 @@
                 <a href=@Url.Action("Index", "Architecture") class="btn btn-primary">Go</a>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
+    </div>*@
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Employees</h5>
-                <p class="card-text">Add or remove employees to business roles within system architecture.</p>
-                <a href=@Url.Action("Register", "Account") class="btn btn-primary">Go</a>
+                <h5 class="card-title">Shift Documents</h5>
+                <p class="card-text">View Documents for your shift.</p>
+                <a href=@Url.Action("Documents", "Associate") class="btn btn-primary">Go</a>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Documents</h5>

@@ -56,8 +56,10 @@
 
 
                 </div>
-            }
-        </div>       
+            }                
+            
+        </div>
+        
         
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -76,11 +78,15 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 <script type="text/javascript">
-    var fieldHTML = '<div class="form-group"><div class="col-md-10"><input class="form-control text-box single-line" name="Fields[0].Subject" type="text" value="" /></div></div>';
+    var fieldHTML = '<div class="col-md-10"><input class="form-control text-box single-line" name="Fields['+ x +'].Subject" type="text" value="" /></div>';
+    var x = 1;
 
     $(function () {
         $("#btnAdd").click(function () {
+            
             $('#container').append(fieldHTML);
+            x++;
+            ;
         });
     });
 </script>

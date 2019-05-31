@@ -27,5 +27,15 @@ namespace TotalControl.Models
         public string UserId { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+
+        [ForeignKey("Team")]
+        public int? TeamId { get; set; }
+
+        public virtual Team Team { get; set; }
+
+        [ForeignKey("Section")]
+        public int? SectionId { get; set; }
+
+        public virtual Section Section { get; set; }
     }
 }

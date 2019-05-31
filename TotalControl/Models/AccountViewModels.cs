@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TotalControl.Models
 {
@@ -76,6 +77,24 @@ namespace TotalControl.Models
         [Display(Name = "Employee Role")]
         public string UserRole { get; set; }
 
+        [ForeignKey("Team")]
+        [Display(Name = "Team")]
+        public int? TeamId { get; set; }
+
+        public Team Team { get; set; }
+
+        [ForeignKey("Manager")]
+        [Display(Name = "Manager")]
+        public int? ManagerId { get; set; }
+
+        public Employee Manager { get; set; }
+
+        [ForeignKey("Section")]
+        [Display(Name = "Section")]
+        public int? SectionId { get; set; }
+
+        public Section Section { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -92,7 +111,8 @@ namespace TotalControl.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         public string UserRoles { get; internal set; }
-    }        
+    }    
+      
 
     public class ResetPasswordViewModel
     {

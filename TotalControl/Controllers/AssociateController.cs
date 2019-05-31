@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,17 @@ namespace TotalControl.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        //GET: Associate/Documents
+        public ActionResult Documents()
+        {
+            var id = User.Identity.GetUserId();
+            var associate = db.Employees.Where(e => e.UserId == id).FirstOrDefault();
+            var form = db.Forms.Where(f => f.SectionId == associate.SectionId).FirstOrDefault();
+            var document = db.Documents.Where(d => d.FormId == form.Id).FirstOrDefault();
+
+            return View(document);
         }
 
         // GET: Associate/Details/5

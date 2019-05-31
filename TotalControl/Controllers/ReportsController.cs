@@ -3,44 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TotalControl.Models;
 
 namespace TotalControl.Controllers
 {
-    [Authorize(Roles = "Coordinator")]
-    public class CoordinatorController : Controller
+    public class ReportsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: Coordinator
+        // GET: Reports
         public ActionResult Index()
         {
             return View();
         }
 
-        //GET: Coordinator/Documents
-        public ActionResult Documents()
-        {
-            return View();
-        }
-
-        // GET: Coordinator/Details/5
+        // GET: Reports/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Coordinator/Create
+        // GET: Reports/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName");
             return View();
         }
 
-        // POST: Coordinator/Create
+        // POST: Reports/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Phone")] Coordinator coordinator)        
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
@@ -54,13 +42,13 @@ namespace TotalControl.Controllers
             }
         }
 
-        // GET: Coordinator/Edit/5
+        // GET: Reports/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Coordinator/Edit/5
+        // POST: Reports/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -76,13 +64,13 @@ namespace TotalControl.Controllers
             }
         }
 
-        // GET: Coordinator/Delete/5
+        // GET: Reports/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Coordinator/Delete/5
+        // POST: Reports/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -6217,9 +6217,14 @@ a.close.disabled {
   position: relative;
 }
 
+#carouselExampleControls{
+    height:700px;
+    width:100%;
+}
+
 .carousel.pointer-event {
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
 }
 
 .carousel-inner {
@@ -6400,6 +6405,11 @@ a.close.disabled {
 
 .carousel-indicators .active {
   opacity: 1;
+}
+
+.carousel-pics {
+    height: 700px;
+    width:100%;
 }
 
 .carousel-caption {

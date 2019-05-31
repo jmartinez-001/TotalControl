@@ -18,6 +18,13 @@ namespace TotalControl.Controllers
             return View();
         }
 
+        //GET: Manager/Documents
+        public ActionResult Documents()
+        {
+            
+            return View();
+        }
+
         // GET: Manager/Details/5
         public ActionResult Details(int id)
         {

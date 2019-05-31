@@ -140,8 +140,14 @@ namespace TotalControl.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            var model = new RegisterViewModel();
+            ViewBag.ManagerId = new SelectList(db.Employees, "Id", "FirstName");
+            ViewBag.TeamId = new SelectList(db.Teams, "Id", "Name");
+            ViewBag.SectionId = new SelectList(db.Sections, "Id", "Name");
+            return View(model);
         }
+
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         //
         // POST: /Account/Register
@@ -152,7 +158,11 @@ namespace TotalControl.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -161,6 +171,10 @@ namespace TotalControl.Controllers
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    var employee = new Employee { FirstName = model.FirstName, LastName = model.LastName, ManagerId = model.ManagerId, TeamId = model.TeamId, SectionId = model.SectionId, UserId = user.Id };
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+
                     //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
                     //await UserManager.SendEmailAsync(user.Id, "Access New Total Control Account", "Your default password is 'Associ@te1' Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
@@ -179,7 +193,7 @@ namespace TotalControl.Controllers
                     //}
                     //else
                     //{
-                        return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Admin");
                     //}
                 }
                 AddErrors(result);

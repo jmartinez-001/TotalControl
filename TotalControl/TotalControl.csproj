@@ -175,6 +175,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
@@ -218,6 +219,14 @@
     <Compile Include="Migrations\201905310110389_IList.cs" />
     <Compile Include="Migrations\201905310110389_IList.Designer.cs">
       <DependentUpon>201905310110389_IList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905310508013_documents.cs" />
+    <Compile Include="Migrations\201905310508013_documents.Designer.cs">
+      <DependentUpon>201905310508013_documents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905310524316_employee model updaate.cs" />
+    <Compile Include="Migrations\201905310524316_employee model updaate.Designer.cs">
+      <DependentUpon>201905310524316_employee model updaate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -289,6 +298,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\business1.jpg" />
+    <Content Include="Images\business2.jpg" />
+    <Content Include="Images\business3.jpeg" />
     <Content Include="Images\ui-icons_222222_256x240.png" />
     <Content Include="JavaScript_Webcam_Plugin\jquery.webcam.js" />
     <Content Include="JavaScript_Webcam_Plugin\jquery.webcam.min.js" />
@@ -424,6 +436,15 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="App_Code\NestedData.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Coordinator\_ViewStart.cshtml" />
+    <Content Include="Views\Manager\_ViewStart.cshtml" />
+    <Content Include="Views\Associate\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_CoordinatorLayout.cshtml" />
+    <Content Include="Views\Shared\_ManagerLayout.cshtml" />
+    <Content Include="Views\Shared\_AssociateLayout.cshtml" />
+    <Content Include="Views\Manager\Documents.cshtml" />
+    <Content Include="Views\Associate\Documents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -465,6 +486,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905310110389_IList.resx">
       <DependentUpon>201905310110389_IList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310508013_documents.resx">
+      <DependentUpon>201905310508013_documents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310524316_employee model updaate.resx">
+      <DependentUpon>201905310524316_employee model updaate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

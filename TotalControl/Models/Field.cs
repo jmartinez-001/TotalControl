@@ -11,6 +11,7 @@ namespace TotalControl.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name ="Field Subject")]
         public string Subject { get; set; }
 
         public string Entry { get; set; }

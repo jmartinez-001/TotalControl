@@ -27,6 +27,7 @@ namespace TotalControl.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Field> Fields { get; set; }
         public DbSet<Form> Forms { get; set; }
+        public DbSet<Document> Documents { get; set; }
 
 
         public ApplicationDbContext()
@@ -39,5 +40,6 @@ namespace TotalControl.Models
             return new ApplicationDbContext();
         }
 
+        
     }
 }

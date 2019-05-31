@@ -41,8 +41,10 @@ namespace TotalControl.Controllers
         // GET: Forms/Create
         public ActionResult Create()
         {
-            ViewBag.SectionId = new SelectList(db.Sections, "Id", "Name");
-            return View();
+            var model = new Form();
+            model.Fields.Add(new Field());
+            ViewBag.SectionId = new SelectList(db.Sections, "Id", "Name");            
+            return View(model);
         }
 
         // POST: Forms/Create
@@ -50,7 +52,7 @@ namespace TotalControl.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,SectionId,Name,DateCreated,DateConducted,PreparedBy,Version,Procedures,CorrectiveAction,ActionsTaken,Comments,Photo,Signature")] Form form)
+        public async Task<ActionResult> Create([Bind(Include = "Id,SectionId,Name,DateCreated,Version,Procedures,CorrectiveAction")] Form form)
         {
             if (ModelState.IsValid)
             {

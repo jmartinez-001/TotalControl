@@ -9,6 +9,12 @@ namespace TotalControl.Models
 {
     public class Form
     {
+
+        public Form()
+        {
+            Fields = new List<Field>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -19,16 +25,13 @@ namespace TotalControl.Models
 
         public string Name { get; set; }
 
-        public DateTime DateCreated { get; set; }
-
-        [Display(Name = "Date Conducted")]
-        public DateTime? DateConducted { get; set; }
-
-        [Display(Name = "Prepared By")]
-        public string PreparedBy { get; set; }
-
+        [Display(Name = "Date Created")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DateCreated { get; set; } = DateTime.Now;    
+       
         [Display(Name = "Document Version")]
-        public double Version { get; set; }
+        public double Version { get; set; } = 1.0;
 
         [Display(Name = "Procedures")]
         [DataType(DataType.MultilineText)]
@@ -36,23 +39,9 @@ namespace TotalControl.Models
 
         [Display(Name = "Required Corrective Actions")]
         [DataType(DataType.MultilineText)]
-        public string CorrectiveAction { get; set; }
-
-        [Display(Name = "Corrective Actions Taken")]
-        [DataType(DataType.MultilineText)]
-        public string ActionsTaken { get; set; }
-
-        [Display(Name = "Comments/ Observations")]
-        [DataType(DataType.MultilineText)]
-        public string Comments { get; set; }
-
-        public byte[] Photo { get; set; }
-
-        public ICollection<Field> Fields { get; set; }
-
-        public string Signature { get; set; }
-
-        
+        public string CorrectiveAction { get; set; }     
+           
+        public IList<Field> Fields { get; set; }            
         
     }
 }

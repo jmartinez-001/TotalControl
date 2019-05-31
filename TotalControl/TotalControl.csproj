@@ -207,12 +207,25 @@
     <Compile Include="Migrations\201905301943280_users1.Designer.cs">
       <DependentUpon>201905301943280_users1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905310026143_added document model.cs" />
+    <Compile Include="Migrations\201905310026143_added document model.Designer.cs">
+      <DependentUpon>201905310026143_added document model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905310033556_date datatypes.cs" />
+    <Compile Include="Migrations\201905310033556_date datatypes.Designer.cs">
+      <DependentUpon>201905310033556_date datatypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905310110389_IList.cs" />
+    <Compile Include="Migrations\201905310110389_IList.Designer.cs">
+      <DependentUpon>201905310110389_IList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModels.cs" />
     <Compile Include="Models\Associate.cs" />
     <Compile Include="Models\Coordinator.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Document.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\Form.cs" />
@@ -443,6 +456,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905301943280_users1.resx">
       <DependentUpon>201905301943280_users1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310026143_added document model.resx">
+      <DependentUpon>201905310026143_added document model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310033556_date datatypes.resx">
+      <DependentUpon>201905310033556_date datatypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310110389_IList.resx">
+      <DependentUpon>201905310110389_IList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
